@@ -1,0 +1,10 @@
+
+version: 2
+
+sources:
+  - name: geih
+    schema: public
+    tables:
+      - name: occupied
+      - name: generalities
+      
