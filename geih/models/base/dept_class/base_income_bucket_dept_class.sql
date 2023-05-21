@@ -6,7 +6,3 @@ select
     class,
     income
 from {{ ref('base_income_dept_class') }}
-order by
-    income,
-    department,
-    class
