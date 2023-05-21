@@ -1,5 +1,5 @@
 select
-    {% for percentage in range(1, 4) %}
-        round({{ (percentage | float) / 4.0 }} * total_pop, 0) as q_{{ percentage }}{% if not loop.last %},{% endif %}
-    {% endfor %}
-from {{ ref('base_total_pop') }}
+    t1.quantile,
+    round((t1.percentage * t2.total_pop)::numeric, 0) as index_pop
+from {{ ref('seed_quartiles') }} t1
+cross join {{ ref('base_total_pop') }} t2

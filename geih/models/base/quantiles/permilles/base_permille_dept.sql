@@ -1,6 +1,6 @@
 select
-    {% for percentage in range(1, 1000) %}
-        round({{ (percentage | float) / 1000.0 }} * total_pop, 0) as m_{{ percentage }},
-    {% endfor %}
-    department
-from {{ ref('base_total_pop_dept') }}
+    t1.quantile,
+    round((t1.percentage * t2.total_pop)::numeric, 0) as index_pop,
+    t2.department
+from {{ ref('seed_permilles') }} t1
+cross join {{ ref('base_total_pop_dept') }} t2
