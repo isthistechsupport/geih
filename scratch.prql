@@ -1,0 +1,6 @@
+from occupied
+select [
+    households = fex_c18,
+    income = inglabo
+]
+

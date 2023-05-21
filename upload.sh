@@ -1,0 +1,8 @@
+psql -d geih -f "disoccupied_sql.sql"
+psql -d geih -f "household_data_sql.sql"
+psql -d geih -f "occupied_sql.sql"
+psql -d geih -f "other_workers_sql.sql"
+psql -d geih -f "generalities_sql.sql"
+psql -d geih -f "migration_sql.sql"
+psql -d geih -f "other_income_and_taxes_sql.sql"
+psql -d geih -f "workforce_sql.sql"
