@@ -2,8 +2,8 @@
 version: 2
 
 sources:
-  - name: geih
-    schema: public
+  - name: source
+    schema: source
     tables:
       - name: occupied
       - name: generalities
